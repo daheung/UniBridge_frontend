@@ -27,15 +27,14 @@ nav, hr{
 }
 
 #mentoTitle{
-  /* border: 1px solid black; */
   margin : 0px 90px;
   font-size: 36px;
   padding : 20px;
   font-weight: bold;
+  text-shadow : 1px 1px 2px black;
 }
 
 #category{
-  /* border: 1px solid black; */
   margin : 0px 90px;
   font-size: 26px;
   padding : 10px;
@@ -53,14 +52,12 @@ nav ul li{
 }
 
 .mentoList{
-  /* border: 1px solid gray;   */
   size : 300px;
   display : flex;
   justify-content:space-between;
 }
 
 .mentoInfo{
-  /* border: 1px solid black; */
   width : 45%;
   height : 375px;
 }
@@ -73,17 +70,17 @@ nav ul li{
 }
 
 .mentoCard{
-  border : 1px solid black;
   width : 100%;
-  height : 100%
-  
+  height : 329px;
   border-radius: 18px;
-  background : linear-gradient(#ECF4FF,#F8FBFF)
+  background : linear-gradient(#ECF4FF,#F8FBFF);
+  box-shadow: 0px 0px 5px black;
 }
 
 .mentoSubject{
   font-size : 20px;
-  margin: 11px 0px 20px 18px;
+  margin: 11px 0px 20px 30px;
+  padding-top: 20px ;
 }
 
 .mentoCardMain{
@@ -112,6 +109,7 @@ nav ul li{
   background-color : white;
   font-size: 28px;
   cursor:pointer;
+  border-color : #D9E2F0;
 }
 
 .mentoBack{
@@ -120,10 +118,10 @@ nav ul li{
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  padding:10px;
+  padding:10px 10px 10px 25px;
 }
 
-.mentoringCurriculum{
+.mentoringPurpose{
   font-size : 24px;
   font-weight :bolder;
   color:#8B7D7D;
