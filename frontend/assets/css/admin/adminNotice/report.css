@@ -233,39 +233,39 @@
 }
 
 .main-container .content-container .subject-selector .all {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/AllSubjectIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/AllSubjectIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .korean {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectKoreanIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectKoreanIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .english {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectEnglishIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectEnglishIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .math {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectMathIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectMathIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .c {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectCIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectCIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .java {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectJavaIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectJavaIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .cpp {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectCPPIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectCPPIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .python {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectPythonIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectPythonIcon.png") center no-repeat;
   background-size: contain;
 }
 .main-container .content-container .subject-selector .game-programming {
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/subjectGameProIcon.png") center no-repeat;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/subjectGameProIcon.png") center no-repeat;
   background-size: contain;
 }
 
@@ -431,7 +431,7 @@
   width: 68px;
   height: inherit;
 
-  background: url("/UniBridge_frontend/frontend/assets/img/admin/adminNoticeImg/userIcon.png") no-repeat center;
+  background: url("/frontend/assets/img/admin/adminNoticeImg/userIcon.png") no-repeat center;
   background-size: contain;
 }
 
