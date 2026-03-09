@@ -10,19 +10,13 @@ body {
     font-family: 'NanumSquareRound', sans-serif;
 }
 
-header {
-    padding: 16px 50px;
-    background-color: white;
-    border-bottom: 1px solid #e0e6ed;
-}
-
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
+    margin-top: 40px;
     gap: 30px;
     padding: 40px 50px;
-    background-color: white;
-    min-height: calc(100vh - 60px);
+    min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
 }
 
 a {
@@ -32,12 +26,13 @@ a {
 /* 사이드바 스타일 */
 aside {
     width: 220px;
-    height: 800px;
+    height: 750px;
     margin-left: 30px;
     background-color: #eef2ff;
     border-radius: 20px;
     padding: 28px 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-top: 25px;
 }
 
 .myPageTitle {
@@ -166,19 +161,19 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px;
 }
 
 .input-group {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 label {
-    width: 200px;            /* 라벨 너비를 좀 더 넓게 */
+    width: 180px;            /* 라벨 너비를 좀 더 넓게 */
     text-align: left;
-    font-size: 25px;
+    font-size: 19px;
     font-weight: 700;
 }
 
@@ -193,7 +188,7 @@ input {
 
 .duplication{
     margin-left: 10px;
-    width: 15%;
+    width: 18%;
     padding: 10px;
     background-color: white;
     border: 1px solid black;
@@ -205,7 +200,7 @@ input {
 
 .spacer {
     margin-left: 10px;
-    width: 15%; /* .duplication 버튼과 동일한 너비 */
+    width: 18%; /* .duplication 버튼과 동일한 너비 */
 }
 
 /* 수정 버튼 우측 하단 absolute */
@@ -226,4 +221,13 @@ input {
 
 .userModify:hover {
     background-color: #c7d2fe;
+}
+
+.error-msg {
+    flex-basis: 100%;
+    order: 99;
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 2px;
 }
