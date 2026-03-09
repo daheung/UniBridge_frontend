@@ -16,7 +16,7 @@
     <div class="list-header">
       <div class="list-title">
         <span class="list-title-icon">
-          <img src="./../../../assets/img/admin/adminSearch/유저들 아이콘.png" alt="유저 아이콘" style="width:36px;height:36px;" />
+          <img src="./../../../assets/img/admin/유저들_아이콘.png" alt="유저 아이콘" style="width:36px;height:36px;" />
         </span>
         전체 유저
       </div>
@@ -43,12 +43,16 @@
     });
   </script>
 
+  <!-- user.js보다 먼저 선언 → avatarSVG / chatSVG 변수 오버라이드 -->
   <script>
-  // 유저 아바타 (유저_아이콘.png)
   const avatarSVG = `<img src="./../../../assets/img/admin/유저_아이콘.png" alt="유저 아이콘" style="width:40px;height:40px;" />`;
 
-  // 상세보기 아이콘 (상세보기_아이콘.png)
-  const detailSVG = `<img src="./../../../assets/img/admin/상세보기_아이콘.png" alt="상세보기 아이콘" style="width:36px;height:36px;" />`;
+  const chatSVG = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="9" y1="10" x2="15" y2="10" stroke-linecap="round"/>
+      <line x1="9" y1="14" x2="13" y2="14" stroke-linecap="round"/>
+    </svg>`;
   </script>
 
   <script src="./../../../assets/js/admin/adminUserManagement/user.js"></script>
