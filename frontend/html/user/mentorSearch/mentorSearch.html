@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>멘토 검색</title>
-  <link rel="stylesheet" href="/assets/css/user/mentorSearch/mentorSearch.css">
-  <link rel="stylesheet" href="/assets/css/header.css">
-  <link rel="stylesheet" href="/assets/css/footer.css">
-  <link href="/assets/css/fonts.css" rel="stylesheet">
-  <script defer src="/assets/js/user/mentorSearch/mentorSearch.js"></script>
+  <link href="/frontend/assets/css/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/assets/css/user/mentorSearch/mentorSearch.css">
+  <script defer src="/frontend/assets/js/user/mentorSearch/mentorPagenation.js"></script>
+  <!-- <script defer src="/frontend/assets/js/user/mentorSearch/mentorMatching.js"></script> -->
+  <script defer src="/frontend/assets/js/user/mentorSearch/categorySearch.js"></script>
+  <link rel="stylesheet" href="/frontend/assets/css/header.css">
+  <link rel="stylesheet" href="/frontend/assets/css/footer.css">
+  <script defer src="/frontend/assets/js/header.js"></script>
+  <script src="/frontend/assets/js/footer.js"></script>
 </head>
 <body>
   <header>
-
+    <div id="headerContainer"></div>
   </header>
   <main>
     <div id="mentoTitle">멘토</div>
@@ -34,7 +38,7 @@
 
     <div class="contents">
       <div class="mentoList">
-        <div class="mentoInfo">
+        <!-- <div class="mentoInfo">
           <div class="mentoName">아무개</div>
           <div class="mentoCard">
             <div class="mentoCardHead">
@@ -42,7 +46,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -65,7 +69,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -78,13 +82,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-    </div>
 
-    <div class="contents">
       <div class="mentoList">
-        <div class="mentoInfo">
+        <!-- <div class="mentoInfo">
           <div class="mentoName">아무개</div>
           <div class="mentoCard">
             <div class="mentoCardHead">
@@ -92,7 +94,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -115,7 +117,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -128,13 +130,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-    </div>
 
-    <div class="contents">
       <div class="mentoList">
-        <div class="mentoInfo">
+        <!-- <div class="mentoInfo">
           <div class="mentoName">아무개</div>
           <div class="mentoCard">
             <div class="mentoCardHead">
@@ -142,7 +142,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -165,7 +165,7 @@
               <div class="mentoCardMain">
                 <div class="mentoFront">
                   <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button" id = "matching">매칭</button>
+                  <button type="button" class = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -178,20 +178,19 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+      </div>
+
+      <div class="mentoList">
+      </div>
+
+      <div class="mentoList">
       </div>
     </div>
-
-    <div class="contents">
-    </div>
-
-    <div class="contents">
-    </div>
-
     <div id="pageNumber">
       <ul>
         <li id = left>&lt;</li>
-        <li id="nowPage">1</li>
+        <!-- <li id="nowPage">1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
@@ -199,13 +198,14 @@
         <li>6</li>
         <li>7</li>
         <li>8</li>
-        <li>9</li>
+        <li>9</li> -->
         <li>10</li>
         <li id = right>&gt;</li>
       </ul>
     </div>
   </main>
   <footer>
+    <div id="footerContainer"></div>
   </footer>
 </body>
 </html>
