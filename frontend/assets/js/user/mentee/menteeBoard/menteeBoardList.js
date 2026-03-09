@@ -23,13 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 2. 행 클릭 → 상세 페이지 이동
-    AD
     const rows = document.querySelectorAll('.menteeBoardRow');
     rows.forEach((row) => {
       row.addEventListener('click', () => {
         const boardId = row.dataset.boardId;
         if (boardId) {
-          window.location.href = `./menteeBoardDetail.html?boardId=${boardId}`;
+          window.location.href = `/frontend/html/user/mentee/menteeBoard/menteeBoardDetail.html?boardId=${boardId}`;
         }
       });
     });
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (writeBtn) {
       writeBtn.addEventListener('click', () => {
         // menteeBoardCreate.html로 이동
-        window.location.href = './menteeBoardCreate.html';
+        window.location.href = '/frontend/html/user/mentee/menteeBoard/menteeBoardCreate.html';
       });
     }
   });
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const writeBtn = document.getElementById('menteeBoardWriteBtn');
   if (writeBtn) {
     writeBtn.addEventListener('click', () => {
-      window.location.href = './menteeBoardCreate.html';
+      window.location.href = '/frontend/html/user/mentee/menteeBoard/menteeBoardCreate.html';
     });
   }
 });

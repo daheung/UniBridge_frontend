@@ -17,11 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     // 행 클릭 이벤트
-    const announceRows = document.querySelectorAll('.announceList tbody tr');
     announceRows.forEach((row) => {
       row.addEventListener('click', () => {
         const announceId = row.dataset.announceId;
-        window.location.href = `./announceBoardDetail.html?announceId=${announceId}`;
+        window.location.href = `/frontend/announceBoardDetail.html?announceId=${announceId}`;
       });
     });
   });
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         row.addEventListener('click', () => {
             const announceId = row.dataset.announceId;
             if (announceId) {
-                window.location.href = `./announceBoardDetail.html?announceId=${announceId}`;
+                window.location.href = `/frontend/announceBoardDetail.html?announceId=${announceId}`;
             }
         });
     });
