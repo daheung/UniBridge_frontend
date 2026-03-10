@@ -5,7 +5,7 @@
     if (!raw) {
       // 데이터 없으면 생성 페이지로 되돌아가기
       alert('멘토링 정보가 없습니다. 생성 페이지로 이동합니다.');
-      window.location.href = '/html/user/mentor/myPage/userMentoCreate/mentoringCreate.html';
+      window.location.href = '/frontend/html/user/mentor/myPage/userMentoCreate/mentoringCreate.html';
       return;
     }
 
