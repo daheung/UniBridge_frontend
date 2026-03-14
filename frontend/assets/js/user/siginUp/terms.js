@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const checkAll = document.querySelector('#checkAll'); 
-    const checkboxes = document.querySelectorAll('.term-check'); 
+    const checkboxes = document.querySelectorAll('.termCheck'); 
     const termsForm = document.querySelector('#termsForm'); 
     const termsBtn = document.querySelector('.termsBtn');
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         termsBtn.disabled = !allRequiredChecked;
     }
 
-    // 1 전체 동의 클릭
+    // 1. 전체 동의 클릭
     checkAll.addEventListener('change', (e) => {
         const isChecked = e.target.checked;
 
@@ -24,11 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonState();
     });
 
-    // 2 개별 체크 클릭
+    // 2. 개별 체크 클릭
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-
-            const checkedCount = document.querySelectorAll('.term-check:checked').length;
+            const checkedCount = document.querySelectorAll('.termCheck:checked').length;
 
             checkAll.checked = (checkedCount === checkboxes.length);
 
@@ -36,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3 회원가입 진행
+    // 3. 회원가입 진행
     termsForm.addEventListener('submit', (e) => {
-
         const allRequiredChecked = requiredTerms.every(item => item.checked);
 
         if (!allRequiredChecked) {
@@ -47,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 특정 경로로 이동
+        // 경로 이동
         e.preventDefault();
         window.location.href = "/frontend/html/user/siginUp/signUp.html";
     });
 
-    // 초기 버튼 상태
+    // 초기 버튼 상태 설정
     updateButtonState();
 });

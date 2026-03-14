@@ -33,7 +33,7 @@ submitBtn.onclick = (event) => {
 
     if (isConfirmed) {
         // [확인] 클릭 시: 특정 경로로 이동
-        const targetPath = "/frontend/html/user/mentee/myPage/myPage.html"; 
+        const targetPath = "/frontend/html/user/mentor/myPage/myPage.html"; 
         window.location.href = targetPath;
     } else {
         // [취소] 클릭 시: 아무 동작도 하지 않음 (모달 상태 유지)

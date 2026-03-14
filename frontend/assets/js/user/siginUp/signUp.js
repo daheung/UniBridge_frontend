@@ -10,9 +10,9 @@ let authVerified = false;
 
 // ── label 텍스트로 input 찾기 ──
 function getInputByLabel(labelText) {
-  const form = document.getElementById("signUp");
+  const form = document.getElementById("signUpForm");
   if (!form) return null;
-  for (const group of form.querySelectorAll(".input-group")) {
+  for (const group of form.querySelectorAll(".inputGroup")) {
     const label = group.querySelector("label");
     if (label && label.textContent.trim() === labelText) {
       return group.querySelector("input");
@@ -22,9 +22,9 @@ function getInputByLabel(labelText) {
 }
 
 function getButtonByLabel(labelText) {
-  const form = document.getElementById("signUp");
+  const form = document.getElementById("signUpForm");
   if (!form) return null;
-  for (const group of form.querySelectorAll(".input-group")) {
+  for (const group of form.querySelectorAll(".inputGroup")) {
     const label = group.querySelector("label");
     if (label && label.textContent.trim() === labelText) {
       return group.querySelector("button");
@@ -35,12 +35,12 @@ function getButtonByLabel(labelText) {
 
 // ── 오류 메시지 표시 ──
 function showError(inputEl, message) {
-  const group = inputEl.closest(".input-group");
-  let errorEl = group.querySelector(".error-msg");
+  const group = inputEl.closest(".inputGroup");
+  let errorEl = group.querySelector(".errorMsg");
 
   if (!errorEl) {
     errorEl = document.createElement("div");
-    errorEl.classList.add("error-msg");
+    errorEl.classList.add("errorMsg");
     errorEl.style.cssText = `
       color: red;
       font-size: 12px;
@@ -55,7 +55,6 @@ function showError(inputEl, message) {
     group.appendChild(errorEl);
   }
 
-  // 입력박스 너비에 딱 맞게
   errorEl.style.maxWidth = inputEl.offsetWidth + "px";
   errorEl.style.width = inputEl.offsetWidth + "px";
   errorEl.textContent = message;
@@ -65,8 +64,8 @@ function showError(inputEl, message) {
 
 // ── 오류 메시지 제거 ──
 function clearError(inputEl) {
-  const group = inputEl.closest(".input-group");
-  const errorEl = group ? group.querySelector(".error-msg") : null;
+  const group = inputEl.closest(".inputGroup");
+  const errorEl = group ? group.querySelector(".errorMsg") : null;
   if (errorEl) errorEl.textContent = "";
   updateSignUpBtn();
 }
@@ -85,8 +84,7 @@ function updateSignUpBtn() {
   const signUpBtn = document.querySelector(".signUpBtn");
   if (!signUpBtn) return;
 
-  // 붉은 글씨 하나라도 있으면 차단
-  const hasError = Array.from(document.querySelectorAll(".error-msg"))
+  const hasError = Array.from(document.querySelectorAll(".errorMsg"))
     .some(el => el.textContent.trim() !== "");
 
   const allFilled = checkAllFilled();
@@ -105,36 +103,34 @@ function updateSignUpBtn() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("signUp");
+  const form = document.getElementById("signUpForm");
   const signUpBtn = form.querySelector(".signUpBtn");
 
-  // 초기 비활성화
   if (signUpBtn) {
     signUpBtn.disabled = true;
     signUpBtn.style.opacity = "0.5";
     signUpBtn.style.cursor = "not-allowed";
   }
 
-  const idInput        = getInputByLabel("아이디");
-  const pwInput        = getInputByLabel("비밀번호");
-  const pwConfirmInput = getInputByLabel("비밀번호 확인");
-  const nameInput      = getInputByLabel("이름");
-  const nicknameInput  = getInputByLabel("닉네임");
-  const phoneInput     = getInputByLabel("전화번호");
-  const authInput      = getInputByLabel("인증번호");
+  const idInput         = getInputByLabel("아이디");
+  const pwInput         = getInputByLabel("비밀번호");
+  const pwConfirmInput  = getInputByLabel("비밀번호 확인");
+  const nameInput       = getInputByLabel("이름");
+  const nicknameInput   = getInputByLabel("닉네임");
+  const phoneInput      = getInputByLabel("전화번호");
+  const authInput       = getInputByLabel("인증번호");
 
-  const idDupBtn       = getButtonByLabel("아이디");
-  const pwConfirmBtn   = getButtonByLabel("비밀번호 확인");
-  const nicknameDupBtn = getButtonByLabel("닉네임");
-  const phoneSendBtn   = getButtonByLabel("전화번호");
-  const authCheckBtn   = getButtonByLabel("인증번호");
+  const idDupBtn        = getButtonByLabel("아이디");
+  const pwConfirmBtn    = getButtonByLabel("비밀번호 확인");
+  const nicknameDupBtn  = getButtonByLabel("닉네임");
+  const phoneSendBtn    = getButtonByLabel("전화번호");
+  const authCheckBtn    = getButtonByLabel("인증번호");
 
-  // ── 이름 입력 시 버튼 상태 갱신 ──
   if (nameInput) {
     nameInput.addEventListener("input", () => updateSignUpBtn());
   }
 
-  // ── 아이디 중복확인 ──
+  // 아이디 중복확인
   if (idDupBtn && idInput) {
     idDupBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -158,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── 비밀번호 확인 버튼 ──
+  // 비밀번호 확인
   if (pwConfirmBtn && pwInput && pwConfirmInput) {
     pwConfirmBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -175,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateSignUpBtn();
     });
 
-    // 실시간 비교
     pwInput.addEventListener("input", () => {
       if (pwConfirmInput.value) {
         if (pwInput.value !== pwConfirmInput.value) {
@@ -205,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── 닉네임 중복확인 ──
+  // 닉네임 중복확인
   if (nicknameDupBtn && nicknameInput) {
     nicknameDupBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -229,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── 인증번호 발송 ──
+  // 인증번호 발송
   if (phoneSendBtn && phoneInput) {
     phoneSendBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -246,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── 인증번호 확인 ──
+  // 인증번호 확인
   if (authCheckBtn && authInput) {
     authCheckBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -266,21 +261,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── 회원가입 버튼 클릭 ──
-  if (signUpBtn) {
-    signUpBtn.addEventListener("click", (e) => {
+  // 회원가입 전송
+  if (form) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (!signUpBtn.disabled) {
-        // form.submit();
         window.location.href = '/frontend/main.html';
       }
     });
   }
 
-  // ── 창 크기 변경 시 error 너비 재계산 ──
+  // 리사이즈 시 에러 너비 조정
   window.addEventListener("resize", () => {
-    document.querySelectorAll(".error-msg").forEach(el => {
-      const group = el.closest(".input-group");
+    document.querySelectorAll(".errorMsg").forEach(el => {
+      const group = el.closest(".inputGroup");
       if (!group) return;
       const input = group.querySelector("input");
       if (input) {

@@ -96,7 +96,7 @@ main {
 }
 
 /* 제목 부분 (아이콘 + 텍스트) */
-.userManage-title {
+.userManageTitle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -104,13 +104,13 @@ main {
     margin-left: 145px;
 }
 
-.userManage-title img {
+.userManageTitle img {
     margin-top: 30px;
     width: 36px;
     height: 36px;
 }
 
-.userManage-title .title {
+.userManageTitle .title {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 500;
@@ -193,9 +193,9 @@ main {
 }
 
 /* 모달 박스 */
-.modal-content {
+.modalContent {
     background-color: white;
-    margin: 3% auto; /* 상단 여백 및 가로 중앙 정렬 */
+    margin: 3% auto;
     padding: 30px;
     width: 600px;
     height: 80%;
@@ -249,9 +249,9 @@ main {
 }
 
 /* 라디오 버튼들을 담는 전체 그룹 */
-.radio-group {
+.radioGroup {
     display: flex;
-    gap: 20px; /* 멘토와 멘티 사이의 간격 */
+    gap: 20px;
     height: 40px;
 }
 
@@ -262,33 +262,34 @@ main {
 }
 
 /* 개별 라디오 항목 (버튼 + 글자) */
-.radio-item {
+.radioItem {
     display: flex;
-    align-items: center; /* 세로축 중앙 정렬 - 핵심! */
-    gap: 8px;            /* 버튼과 글자 사이의 미세한 간격 */
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
     font-size: 18px;
+    width: auto; /* 라벨 너비 고정 해제 */
 }
 
 /* 라디오 버튼 자체의 크기를 조절하고 싶을 때 */
-.radio-item input[type="radio"] {
+.radioItem input[type="radio"] {
     width: 18px;
     height: 15px;
     cursor: pointer;
-    margin: 0; /* 기본 마진 제거 */
+    margin: 0;
 }
 
 /* 희망 과목 선택 */
-.modal-select {
+.modalSelect {
     flex: 1;
     height: 40px;
     border: 1px solid black;
-    border-radius: 12px; /* 사진처럼 아주 둥글게 */
+    border-radius: 12px;
     padding: 0 15px;
     background-color: white;
     font-family: 'NanumSquareRound', sans-serif;
     font-size: 16px;
-    appearance: none; /* 기본 화살표 제거 */
+    appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
@@ -296,36 +297,36 @@ main {
     cursor: pointer;
 }
 
-.modal-select:focus {
+.modalSelect:focus {
     outline: none;
     border-color: #4f46e5;
 }
 
 /* 파일 정보 표시 영역 (클릭 가능하게 설정) */
-.file-info-active {
+.fileInfoActive {
     display: flex;
     align-items: center;
     width: 100%;
     gap: 10px;
-    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 */
+    cursor: pointer;
     padding: 5px;
     border-radius: 4px;
     transition: background-color 0.2s;
 }
 
-.file-info-active:hover {
-    background-color: #f0f4ff; /* 마우스 올렸을 때 피드백 */
+.fileInfoActive:hover {
+    background-color: #f0f4ff;
 }
 
-.file-icon {
+.fileIcon {
     width: 20px;
     height: 20px;
 }
 
-.file-name-text {
+.fileNameText {
     font-size: 14px;
-    color: #4f46e5; /* 파일명임을 알 수 있게 색상 포인트 */
-    text-decoration: underline; /* 클릭 가능함을 시각적으로 표시 */
+    color: #4f46e5;
+    text-decoration: underline;
 }
 
 /* 버튼 숨김용 클래스 */
@@ -333,19 +334,18 @@ main {
     display: none !important;
 }
 
-.file-attach-section {
+.fileAttachSection {
     margin-top: 20px;
     text-align: left;
 }
 
-.file-label {
+.fileLabel {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
-/* 감싸는 테두리 박스 */
-.file-input-wrapper {
+.fileInputWrapper {
     position: relative;
     width: 100%;
 }
@@ -361,7 +361,7 @@ main {
 }
 
 /* 이미지와 동일한 디자인 구현 */
-.fake-file-input {
+.fakeFileInput {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
@@ -371,15 +371,16 @@ main {
     height: 45px;
 }
 
-/* '파일 선택' 버튼 부분 */
-.file-select-btn {
-    background-color: #e0e0e0; /* 연한 회색 */
+.fileSelectBtn {
+    background-color: #e0e0e0;
     color: #333;
     padding: 6px 15px;
     border-radius: 4px;
     font-size: 14px;
     margin-right: 15px;
     border: 1px solid #bcbcbc;
+    width: auto;
+    text-align: center;
 }
 
 /* 파일 이름이 표시되는 텍스트 */
@@ -388,36 +389,32 @@ main {
     color: #666;
 }
 
-.modal-footer {
-    margin-top: auto; /* 위쪽 여백을 자동으로 채워 바닥으로 이동 */
+.modalFooter {
+    margin-top: auto;
     display: flex;
-    justify-content: flex-end; /* 우측 정렬 */
-    gap: 10px; /* 버튼 사이 간격 */
+    justify-content: flex-end;
+    gap: 10px;
     padding-top: 20px;
 }
 
 /* 텍스트 정렬은 아까 배운 flex를 활용하세요 */
-.input-row {
-    display: flex;           /* 가로 나열 */
-    align-items: center;     /* 세로축 중앙 */
+.inputRow {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
     justify-content: space-between;
 }
 
-label {
-    width: 100px;            /* 라벨 너비를 좀 더 넓게 */
+.inputRow label {
+    width: 100px;
     text-align: left;
     font-size: 18px;
 }
 
-.input-row label:last-child{
-    margin-bottom: 100px;
-}
-
-input {
-    flex: 1;                 /* 남은 공간을 다 채움 */
+.modalInput {
+    flex: 1;
     height: 40px;
-    background-color: white; /* 회색 입력창 */
+    background-color: white;
     border: 1px solid black; 
     border-radius: 12px;
     padding: 0 15px;

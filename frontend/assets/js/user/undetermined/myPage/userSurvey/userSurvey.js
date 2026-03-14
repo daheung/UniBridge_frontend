@@ -1,8 +1,8 @@
 const modal = document.getElementById("surveyModal");
 const openBtn = document.getElementById("userWriteBtn");
-const xBtn = document.querySelector(".closeBtn");    // 상단 X 버튼
+const xBtn = document.querySelector(".closeBtn");
 const closeBtn = document.getElementById("closeModalBtn");
-const submitBtn = document.getElementById("sumbitBtn"); //작성완료
+const submitBtn = document.getElementById("submitBtn"); 
 
 // 모든 라디오 버튼과 컨텐츠 영역을 가져옵니다.
 const roleRadios = document.querySelectorAll('.radioUserType');
@@ -44,7 +44,7 @@ function updateFileName() {
         // 3. 파일 이름 출력
         fileNameDisplay.textContent = fileInput.files[0].name;
     } else {
-        // 파일 선택을 취소하거나 비었을 때 다시 초기 상태로 (필요 시)
+        // 파일 선택을 취소하거나 비었을 때 다시 초기 상태로
         fileSelector.classList.remove('hidden');
         fileInfoDisplay.style.display = 'none';
     }
@@ -55,7 +55,6 @@ submitBtn.onclick = (event) => {
     event.preventDefault();
 
     // 2. 원하는 경로를 직접 지정하여 이동합니다.
-    // 예: "userModify.html" 또는 "../../main.html" 등
     const targetPath = "/frontend/html/user/undetermined/myPage/myPage.html"; 
     window.location.href = targetPath;
 };

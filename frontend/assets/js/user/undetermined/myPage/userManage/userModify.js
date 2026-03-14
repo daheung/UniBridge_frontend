@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const completeBtn = document.querySelector(".userModifyBtn");
     const profileImg = document.querySelector(".userImg > img");
     const photoBtn = document.querySelector("#imgBtn");
-    const photoError = document.querySelector(".userImg .error-msg");
+    const photoError = document.querySelector(".userImg .errorMsg");
 
     // 상태 변수
     let isNickChecked = false; // 중복 확인 완료 여부
     let isPhoneAuthSent = false; // 인증번호 발송 여부
     let isPhoneVerified = false; // 인증번호 확인 완료 여부
     let isPhotoAttached = !!profileImg.getAttribute("src") && !profileImg.src.includes("ex1.png"); 
-    // 기본 이미지(ex1.png)가 아닐 경우 이미 등록된 것으로 간주
 
     // ──────────────────────────────────────
     // 1. 프로필 사진 관리
@@ -41,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. 닉네임 변경
     // ──────────────────────────────────────
     const nickGroup = document.querySelectorAll(".inputGroup")[2];
-    const nickInput = nickGroup.querySelector("input");
+    const nickInput = nickGroup.querySelector(".userInput");
     const nickDupBtn = nickGroup.querySelectorAll("button")[0];
     const nickChangeBtn = nickGroup.querySelectorAll("button")[1];
-    const nickError = nickGroup.querySelector(".error-msg");
+    const nickError = nickGroup.querySelector(".errorMsg");
 
     nickInput.addEventListener("input", () => {
         isNickChecked = false;
@@ -82,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // ──────────────────────────────────────
     // 3. 비밀번호 변경
     // ──────────────────────────────────────
-    const pwInput = document.querySelectorAll(".inputGroup")[3].querySelector("input");
+    const pwInput = document.querySelectorAll(".inputGroup")[3].querySelector(".userInput");
     const pwConfirmGroup = document.querySelectorAll(".inputGroup")[4];
-    const pwConfirmInput = pwConfirmGroup.querySelector("input");
+    const pwConfirmInput = pwConfirmGroup.querySelector(".userInput");
     const pwCheckBtn = pwConfirmGroup.querySelectorAll("button")[0];
     const pwChangeBtn = pwConfirmGroup.querySelectorAll("button")[1];
-    const pwError = pwConfirmGroup.querySelector(".error-msg");
+    const pwError = pwConfirmGroup.querySelector(".errorMsg");
 
     let isPwMatched = false;
 
@@ -121,15 +120,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // ──────────────────────────────────────
     // 4. 전화번호 및 인증
     // ──────────────────────────────────────
-    const phoneInput = document.querySelectorAll(".inputGroup")[5].querySelector("input");
+    const phoneInput = document.querySelectorAll(".inputGroup")[5].querySelector(".userInput");
     const authSendBtn = document.querySelector(".authBtn");
-    const phoneError = document.querySelectorAll(".inputGroup")[5].querySelector(".error-msg");
+    const phoneError = document.querySelectorAll(".inputGroup")[5].querySelector(".errorMsg");
 
     const authGroup = document.querySelectorAll(".inputGroup")[6];
-    const authInput = authGroup.querySelector("input");
+    const authInput = authGroup.querySelector(".userInput");
     const authConfirmBtn = authGroup.querySelectorAll("button")[0];
     const phoneChangeBtn = authGroup.querySelectorAll("button")[1];
-    const authError = authGroup.querySelector(".error-msg");
+    const authError = authGroup.querySelector(".errorMsg");
 
     authSendBtn.addEventListener("click", () => {
         if (!phoneInput.value) {
@@ -170,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ──────────────────────────────────────
-    // 5. 성별 변경 (추가된 부분)
+    // 5. 성별 변경
     // ──────────────────────────────────────
     const genderGroup = document.querySelectorAll(".inputGroup")[7];
     const genderChangeBtn = genderGroup.querySelector(".change");
@@ -183,17 +182,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ──────────────────────────────────────
-    // 6. 완료 버튼 (최종 페이지 이동)
+    // 6. 완료 버튼
     // ──────────────────────────────────────
-    completeBtn.addEventListener("click", (e) => {
+    completeBtn.addEventListener("click", () => {
         if (!isPhotoAttached) {
             photoError.style.color = "red";
             photoError.textContent = "사진 첨부는 필수입니다.";
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
-
-        // 모든 로직 통과 시 이동
-        window.location.href = '/frontend/html/user/mentee/myPage/myPage.html';
+        window.location.href = '/frontend/html/user/undetermined/myPage/myPage.html';
     });
 });
